@@ -1,3 +1,103 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#FAFAFA"><title>About — Jin Liu</title><style>
-:root{--paper:#FAFAFA;--ink:#000;--muted:#797979;--line:#deded6;--font:'PP Neue Montreal',Arial,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased}.wrap{width:min(1440px,100%);margin:0 auto;padding:0 16px}a{color:inherit;text-decoration:none}.topbar{height:64px;display:flex;align-items:center;justify-content:space-between}.brand,.nav{font-size:16px;font-weight:500;letter-spacing:0}.nav{display:flex;gap:36px}.brand,.nav a,.footer a{position:relative}.brand:after,.nav a:after,.footer a:after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:#000;transform:scaleX(0);transform-origin:left;transition:transform .18s ease}.brand:hover:after,.brand:focus-visible:after,.nav a:hover:after,.nav a:focus-visible:after,.footer a:hover:after,.footer a:focus-visible:after{transform:scaleX(1)}.back{display:inline-block;margin:42px 0 62px;font-size:14px;position:relative}.back:after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:#000;transform:scaleX(0);transform-origin:left;transition:transform .18s ease}.back:hover:after{transform:scaleX(1)}.eyebrow{font-size:14px;color:var(--muted);margin:0 0 16px}.page-title{font-weight:500;font-size:40px;line-height:.98;letter-spacing:-.055em;margin:0;max-width:900px}.page-intro{padding:22px 0 110px}.footer{display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-size:14px;font-weight:500;letter-spacing:0}.footer a{position:relative}@media(max-width:700px){.topbar{height:56px}.nav{gap:20px}.back{margin:30px 0 44px}.page-intro{padding:18px 0 80px}.footer{gap:12px;flex-direction:column;align-items:flex-start}}
-</style></head><body><div class="wrap"><header class="topbar"><a class="brand" href="index.html">Jin Liu</a><nav class="nav" aria-label="Main navigation"><a href="bites.html">Bites</a><a href="about.html" class="active" aria-current="page">About</a></nav></header><main><section class="page-intro"><h1 class="page-title">Good design makes<br>the complicated<br>feel obvious</h1></section></main><footer class="footer"><span>© 2024 Jin Liu</span><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></footer></div></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#FAFAFA"><title>Info — Jin Liu</title><style>
+:root{--paper:#FAFAFA;--ink:#000;--muted:#797979;--line:#deded6;--font:'PP Neue Montreal',Arial,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased}.wrap{width:min(1440px,100%);margin:0 auto;padding:0 16px}a{color:inherit;text-decoration:none}.topbar{height:64px;display:flex;align-items:center;justify-content:space-between}.brand,.nav{font-size:16px;font-weight:500;letter-spacing:0}.nav{display:flex;gap:36px}.brand,.nav a,.footer a{position:relative}.brand:after,.nav a:after,.footer a:after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:#000;transform:scaleX(0);transform-origin:left;transition:transform .18s ease}.brand:hover:after,.brand:focus-visible:after,.nav a:hover:after,.nav a:focus-visible:after,.footer a:hover:after,.footer a:focus-visible:after{transform:scaleX(1)}.back{display:inline-block;margin:42px 0 62px;font-size:14px;position:relative}.back:after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:#000;transform:scaleX(0);transform-origin:left;transition:transform .18s ease}.back:hover:after{transform:scaleX(1)}.eyebrow{font-size:14px;color:var(--muted);margin:0 0 16px}.page-title{font-weight:500;font-size:40px;line-height:.98;letter-spacing:0.5px;margin:0;max-width:900px}.page-intro{padding:22px 0 110px}.footer{display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-size:14px;font-weight:500;letter-spacing:0}.footer a{position:relative}@media(max-width:700px){.topbar{height:56px}.nav{gap:20px}.back{margin:30px 0 44px}.page-intro{padding:18px 0 80px}.footer{gap:12px;flex-direction:column;align-items:flex-start}}
+.cursor-dot{position:fixed;left:0;top:0;width:9px;height:9px;border-radius:50%;background:#FF6600;opacity:1;visibility:hidden;pointer-events:none;z-index:9999;will-change:transform,opacity;mix-blend-mode:normal}.cursor-dot.is-visible{opacity:1;visibility:visible}@media(pointer:coarse){.cursor-dot{display:none}}@media(prefers-reduced-motion:reduce){.cursor-dot{transition:none}}
+@media(pointer:fine){body,body *{cursor:none!important}}
+
+/* Keep short pages full-height and naturally push the footer down. */
+html,body{min-height:100%}body{min-height:100vh;min-height:100svh}.wrap{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}main{flex:1;display:flex;flex-direction:column}
+
+.brand:after,.nav a:after,.footer a:after{background:#000}
+.info-layout{display:flex;flex:1;flex-direction:column;padding:120px 0}
+.info-intro-row{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:24px}
+.info-portrait{display:block;flex:0 0 120px;width:120px;height:120px;object-fit:cover;border-radius:50%}
+.info-intro{max-width:calc(50% - 8px);margin:0;font-size:20px;line-height:1.4;font-weight:500;letter-spacing:0;text-align:left}
+.info-columns{display:grid;grid-template-columns:1.15fr 1.15fr .8fr 1fr;gap:clamp(36px,6vw,96px);margin-top:64px;padding:0}
+.info-section h2{margin:0 0 24px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;line-height:1.2;font-weight:400;letter-spacing:.01em;text-transform:uppercase}
+.info-section p,.info-section li{margin:0;font-size:16px;line-height:1.55;font-weight:500}
+.info-section ul{margin:0;padding:0;list-style:none}
+.info-section li+li{margin-top:2px}
+.info-contact li+li{margin-top:8px}
+.info-contact a{position:relative;display:inline-block;color:inherit;text-decoration:none;transition:color .18s ease}
+.info-contact a:hover,.info-contact a:focus-visible,.info-contact a:active{color:#286AED}
+.info-contact a:after{content:none}
+.email-copy-row{display:flex;align-items:center;gap:7px}
+.email-copy-button{display:inline-flex;align-items:center;gap:6px;padding:0;border:0;background:transparent;color:#000;font:inherit;line-height:inherit;text-align:left;transition:color .18s ease}
+.email-copy-button:hover,.email-copy-button:focus-visible,.email-copy-button:active,.email-copy-button.is-copied{color:#286AED}
+.info-contact .contact-arrow{display:inline-block;margin-left:2px;transition:color .18s ease}
+.info-contact a:hover .contact-arrow,.info-contact a:focus-visible .contact-arrow,.info-contact a:active .contact-arrow{color:#286AED}
+.email-copy-button:focus-visible{outline:1px solid currentColor;outline-offset:2px}
+.email-copy-button svg{display:block;flex:none;width:14px;height:14px}
+.email-copy-button .check-icon{display:none}
+.email-copy-button.is-copied .copy-icon{display:none}
+.email-copy-button.is-copied .check-icon{display:block}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:900px){.info-columns{grid-template-columns:1fr 1fr;gap:44px 36px}}
+@media(max-width:700px){.topbar{height:56px}.nav{gap:20px}.info-layout{padding:120px 0}.info-intro-row{gap:18px}.info-portrait{flex-basis:120px;width:120px;height:120px}.info-intro{font-size:20px;max-width:100%}.info-columns{grid-template-columns:1fr;gap:34px;margin-top:80px;padding:0}.info-competences{grid-column:auto}.footer{gap:12px;flex-direction:column;align-items:flex-start}}
+
+
+.footer a:hover,.footer a:focus-visible,.footer a:active{color:#286AED}
+.footer a:hover:after,.footer a:focus-visible:after,.footer a:active:after{background:#286AED}
+.copyright-mark{color:#797979}.copyright-copy{color:#797979}
+
+/* Keep the navigation gutter fixed and balanced across viewport widths. */
+.topbar{width:calc(100vw - 32px);margin-left:calc(50% - (100vw - 32px)/2)}
+</style></head><body><div class="wrap"><header class="topbar"><a class="brand" href="index.html">Jin Liu</a><nav class="nav" aria-label="Main navigation"><a href="index.html#work">Works</a><a href="bites.html">Bites</a><a href="about.html" class="active" aria-current="page">Info</a></nav></header><main><section class="info-layout" aria-label="Information about Jin Liu"><div class="info-intro-row"><img class="info-portrait" src="assets/profile-jin.png" alt="Portrait of Jin Liu"><p class="info-intro">I’m a Toronto-based senior product designer working at the intersection of design strategy and UX, bridging people with devices and services.</p></div><div class="info-columns"><section class="info-section"><h2>Experience</h2><ul><li>Senior Product Designer</li><li>Toronto, Canada</li></ul></section><section class="info-section"><h2>Recognition</h2><p>Selected recognition details coming soon.</p></section><section class="info-section info-competences"><h2>Competences</h2><ul><li>Product Design</li><li>UX Design</li><li>Design Strategy</li><li>Digital Services</li></ul></section><section class="info-section info-contact"><h2>Contact</h2><ul><li class="email-copy-row"><span>Email ·</span><button class="email-copy-button" type="button" data-copy="jinlyuj@gmail.com" aria-label="Copy email address" title="Copy email address"><span>jinlyuj@gmail.com</span><svg class="copy-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="9" height="10" rx="1.2" stroke="currentColor" stroke-width="1.3"/><path d="M11 3.5V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h.5" stroke="currentColor" stroke-width="1.3"/></svg><svg class="check-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8.2 3.1 3.1L13 4.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="visually-hidden" id="email-copy-status" aria-live="polite"></span></li><li>LinkedIn · <a href="https://www.linkedin.com/in/jinliu104/" target="_blank" rel="noreferrer">@jinliu104 <span class="contact-arrow">↗</span></a></li></ul></section></div></section></main><footer class="footer"><span class="copyright-copy"><span class="copyright-mark">©</span> 2027 Jin Liu</span><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a></footer></div><script>
+  (() => {
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+    const dot = document.createElement('span');
+    dot.className = 'cursor-dot';
+    dot.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(dot);
+    let targetX = -20, targetY = -20, x = -20, y = -20, frame = 0;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const draw = () => {
+      if (reducedMotion) { x = targetX; y = targetY; }
+      else { x += (targetX - x) * .24; y += (targetY - y) * .24; }
+      dot.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-50%)`;
+      if (Math.abs(targetX - x) > .15 || Math.abs(targetY - y) > .15) frame = requestAnimationFrame(draw);
+      else { x = targetX; y = targetY; dot.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-50%)`; frame = 0; }
+    };
+    window.addEventListener('pointermove', (event) => {
+      targetX = event.clientX; targetY = event.clientY;
+      dot.classList.add('is-visible');
+      if (!frame) frame = requestAnimationFrame(draw);
+    }, { passive: true });
+    document.documentElement.addEventListener('pointerleave', () => dot.classList.remove('is-visible'));
+  })();
+</script><script>
+  (() => {
+    const button = document.querySelector('.email-copy-button');
+    const status = document.getElementById('email-copy-status');
+    if (!button) return;
+    let resetTimer;
+    button.addEventListener('click', async () => {
+      const email = button.dataset.copy;
+      try {
+        if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(email);
+      } catch {
+        const field = document.createElement('textarea');
+        field.value = email;
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        document.body.appendChild(field);
+        field.select();
+        const copied = document.execCommand('copy');
+        field.remove();
+        if (!copied) { status.textContent = 'Could not copy email address.'; return; }
+      }
+      status.textContent = 'Email address copied.';
+      button.setAttribute('aria-label', 'Email address copied');
+      button.setAttribute('title', 'Copied');
+      button.classList.add('is-copied');
+      window.clearTimeout(resetTimer);
+      resetTimer = window.setTimeout(() => {
+        status.textContent = '';
+        button.setAttribute('aria-label', 'Copy email address');
+        button.setAttribute('title', 'Copy email address');
+        button.classList.remove('is-copied');
+      }, 1800);
+    });
+  })();
+</script>
+</body></html>
