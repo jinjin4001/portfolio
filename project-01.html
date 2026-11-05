@@ -44,31 +44,71 @@ html,body{min-height:100%}body{min-height:100vh;min-height:100svh}.wrap{min-heig
 .copyright-mark{color:#797979}.copyright-copy{color:#797979}
 
 /* Keep the navigation gutter fixed and balanced across viewport widths. */
-.topbar{width:calc(100vw - 32px);margin-left:calc(50% - (100vw - 32px)/2)}
+.topbar{width:100vw;margin-left:calc(50% - 50vw);height:auto;padding:16px}
+
+.footer{width:calc(100vw - 32px);margin-left:calc(50% - (100vw - 32px)/2)}
+
+/* Shared spacing rule: the site nav and footer use matching 16px vertical padding. */
+.topbar{position:relative;z-index:7;width:100vw;margin-left:calc(50% - 50vw);height:auto;padding:16px;border-bottom:1px solid #e5e5e5}
+.footer{padding:16px 0}
+
+/* Keep the project navigation visible while content uses only the space beside it. */
+.wrap{--project-index-width:200px}main{--project-content-width:min(1100px,calc(100vw - var(--project-index-width) - 64px))}
+.topbar{position:relative;z-index:7}
+.project-index{position:fixed;top:51px;bottom:0;left:0;width:var(--project-index-width);display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:16px 24px;background:var(--paper);border-right:1px solid #e5e5e5;overflow-y:auto;z-index:6;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.02em}
+.project-index a{color:var(--muted);text-decoration:none;transition:color .18s ease}
+.project-index a:first-child,.project-index .back-to-top{display:inline-flex;align-items:center;gap:8px;width:fit-content;padding:4px 8px;background:#e5e5e5;color:#666;border-radius:2px}.project-index a:first-child{margin-bottom:10px}.project-index .back-to-top{margin-top:auto;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(5px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease}.project-index .back-to-top.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.project-index a:hover,.project-index a:focus-visible,.project-index a:active{color:#286AED}
+#overview,#detail-intro,#detail-role,#detail-tags,#detail-year{scroll-margin-top:72px}
+.hero{width:calc(100vw - var(--project-index-width));margin:0 0 32px calc(var(--project-index-width) - max(16px,calc((100vw - 1440px)/2 + 16px)))}
+.project-heading,.details{position:relative;left:0;width:var(--project-content-width);max-width:none;margin-left:calc(var(--project-index-width) + (100vw - var(--project-index-width) - var(--project-content-width))/2 - max(16px,calc((100vw - 1440px)/2 + 16px)));margin-right:0}
+@media(max-width:1280px){.wrap{--project-index-width:clamp(84px,15.625vw,200px)}.project-index{padding:16px 8px;gap:14px}}
+.footer{flex-shrink:0;width:calc(100vw - var(--project-index-width) - 32px);margin-left:calc(var(--project-index-width) + 16px - max(16px,calc((100vw - 1440px)/2 + 16px)))}
 </style>
 </head>
 <body>
   <div class="wrap">
-    <header class="topbar">
+    <header class="topbar" id="top">
       <a class="brand" href="index.html">Jin Liu</a>
       <nav class="nav" aria-label="Main navigation"><a href="index.html#work">Works</a><a href="bites.html">Bites</a><a href="about.html">Info</a></nav>
     </header>
     <main>
-      <section class="hero" aria-label="Project interface preview">
+      <aside class="project-index" aria-label="Project sections"><a href="index.html">← Home</a><a href="#overview">Overview</a><a href="#detail-intro">Intro</a><a href="#detail-role">My Role</a><a href="#detail-tags">Tag</a><a href="#detail-year">Year</a><a class="back-to-top" href="#top">↑ Back to top</a></aside>
+      <section class="hero" id="overview" aria-label="Project interface preview">
         <img src="assets/project-01-side-panel.png" alt="Neptune Appcode user permissions side panel interface">
       </section>
       <section class="project-heading">
         <h1>The Keyring</h1>
       </section>
       <section class="details" aria-label="Project details">
-        <div><div class="detail-label">Intro</div><div class="detail-value">A clearer way for teams to manage user access and permissions across multiple services.</div></div>
-        <div class="detail-role"><div class="detail-label">My Role</div><div class="detail-value">Product design<br>Interaction design<br>Product strategy</div></div>
-        <div><div class="detail-label">Tag</div><div class="detail-value">Access management<br>Enterprise SaaS<br>UX</div></div>
-        <div><div class="detail-label">Year</div><div class="detail-value">2024</div></div>
+        <div id="detail-intro"><div class="detail-label">Intro</div><div class="detail-value">A clearer way for teams to manage user access and permissions across multiple services.</div></div>
+        <div class="detail-role" id="detail-role"><div class="detail-label">My Role</div><div class="detail-value">Product design<br>Interaction design<br>Product strategy</div></div>
+        <div id="detail-tags"><div class="detail-label">Tag</div><div class="detail-value">Access management<br>Enterprise SaaS<br>UX</div></div>
+        <div id="detail-year"><div class="detail-label">Year</div><div class="detail-value">2024</div></div>
       </section>
     </main>
     <footer class="footer"><span class="copyright-copy"><span class="copyright-mark">©</span> 2027 Jin Liu</span><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a></footer>
   </div>
+<script>
+  (() => {
+    const sidebar = document.querySelector('.project-index');
+    const topbar = document.querySelector('.topbar');
+    const backToTop = document.querySelector('.back-to-top');
+    if (!sidebar || !topbar) return;
+    const syncSidebar = () => {
+      sidebar.style.top = `${Math.max(0, topbar.offsetHeight - window.scrollY)}px`;
+      const atPageEnd = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 16;
+      backToTop?.classList.toggle('is-visible', atPageEnd);
+    };
+    backToTop?.addEventListener('click', (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    window.addEventListener('scroll', syncSidebar, { passive: true });
+    window.addEventListener('resize', syncSidebar, { passive: true });
+    syncSidebar();
+  })();
+</script>
 <script>
   (() => {
     if (!window.matchMedia('(pointer: fine)').matches) return;

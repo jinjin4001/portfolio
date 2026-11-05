@@ -17,7 +17,16 @@ html,body{min-height:100%}body{min-height:100vh;min-height:100svh}.wrap{min-heig
 .copyright-mark{color:#797979}.copyright-copy{color:#797979}
 
 /* Keep the navigation gutter fixed and balanced across viewport widths. */
-.topbar{width:calc(100vw - 32px);margin-left:calc(50% - (100vw - 32px)/2)}
+.topbar{width:100vw;margin-left:calc(50% - 50vw);height:auto;padding:16px}
+
+.footer{width:calc(100vw - 32px);margin-left:calc(50% - (100vw - 32px)/2)}
+
+/* Shared spacing rule: the site nav and footer use matching 16px vertical padding. */
+.topbar{width:100vw;margin-left:calc(50% - 50vw);height:auto;padding:16px;border-bottom:1px solid #e5e5e5}
+.footer{padding:16px 0}
+
+/* Keep project text content centered on wide displays. */
+.project-heading,.details{width:100%;max-width:1100px;margin-left:auto;margin-right:auto}
 </style></head><body><div class="wrap"><header class="topbar"><a class="brand" href="index.html">Jin Liu</a><nav class="nav" aria-label="Main navigation"><a href="index.html#work">Works</a><a href="bites.html">Bites</a><a href="about.html">Info</a></nav></header><main><section class="project-hero" aria-label="Project preview"><div class="art art-two"><div class="ui"><div class="ui-top"><span class="ui-logo">STUDIO / SPACE</span><span class="ui-dots"><i></i><i></i><i></i></span></div><div class="balance"><span class="avatar"></span> Your week, in focus</div><div class="rows"><div class="row"><i></i><em></em></div><div class="row"><i style="width:52%"></i><em></em></div><div class="row"><i style="width:30%"></i><em></em></div><div class="row"><i style="width:45%"></i><em></em></div></div></div><i class="tile2"></i></div></section><section class="project-heading"><h1 class="page-title">Project Name</h1></section><section class="details" aria-label="Project details"><div><div class="detail-label">Intro</div><div class="detail-value">Project introduction coming soon.</div></div><div><div class="detail-label">My Role</div><div class="detail-value">Product design<br>Interaction design</div></div><div><div class="detail-label">Tag</div><div class="detail-value">Product design<br>UX<br>Digital</div></div><div><div class="detail-label">Year</div><div class="detail-value">2024</div></div></section></main><footer class="footer"><span class="copyright-copy"><span class="copyright-mark">©</span> 2027 Jin Liu</span><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a></footer></div><script>
   (() => {
     if (!window.matchMedia('(pointer: fine)').matches) return;
